@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8" />
+		<title>数据录入界面——k_v</title>
+
+		<script type="text/javascript" language="javascript">
+			function add(){
+				var k = document.getElementById("key").value;
+				var v = document.getElementById("value").value;
+				var a = document.getElementById("datainfo");
+				var tr1 = document.createElement("tr");
+				var b = document.createElement("td");
+				var c = document.createElement("td");
+				var d = document.createElement("td");
+				b.innerHTML=k;
+				c.innerHTML=v;
+				d.innerHTML="<a href='#' onclick=delete(this)> 删除 |</a><a href='#' onclick=change(this)> 修改</a>";
+				a.appendChild(tr1);
+				a.appendChild(b);
+				a.appendChild(c);
+				a.appendChild(d);
+			}
+		</script>
+	</head>
+	<body style="text-align:center;">
+		<h2>请输入数据</h2>
+		<form name="k_v" action="/add" method="post">
+			key:<input type="text" id="key" name="K"></input>&nbsp;&nbsp;
+			value:<input type="text" id="value" name="V"></input>
+			<input type="submit" value="添加" onclick="add()"/>
+		</form></br></br>
+		<table name="data" border="0" align="center" id="datainfo">
+			<tr>
+				<th style="background-color:#FFC0CB;">&nbsp;键&nbsp;</th>
+				<th style="background-color:#90EE90;">&nbsp;值&nbsp;</th>
+				<th style="background-color:#00FF7F;">&nbsp;操 作&nbsp;</th>
+			</tr>	
+		</table>
+	</body>
+</html>
